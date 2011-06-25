@@ -78,13 +78,13 @@ heads = [u'D',
 
 jizz = [u'~', u'\u301c', u'\u3030', u'\u2053', u'\u223f', u'\U0001017c,']
 
-def calc_bits(l):
-    return int(math.log(len(l), 2))
+def calc_bits(i):
+    return int(math.log(i, 2))
 
-balls_nbits = calc_bits(balls)
-shafts_nbits = calc_bits(shafts)
-heads_nbits = calc_bits(heads)
-jizz_nbits = calc_bits(jizz)
+balls_nbits = calc_bits(len(balls))
+shafts_nbits = calc_bits(len(shafts))
+heads_nbits = calc_bits(len(heads))
+jizz_nbits = calc_bits(len(jizz))
 total_bits = balls_nbits + shafts_nbits + heads_nbits
 
 def _unisplit(u):
@@ -103,7 +103,8 @@ def _unisplit(u):
 
 
 def int_to_dong(i):
-    nbits = i.bit_length()
+    nbits = calc_bits(i)
+
     extra_bits = nbits - total_bits
 
     if extra_bits > (2 + jizz_nbits * 4):
