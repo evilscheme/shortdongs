@@ -4,6 +4,33 @@
     <style>
         body {font-family: Verdana, Arial, Helvetica, sans-serif;}
         a { text-decoration: none; color: pink;}
+
+        .button {
+            font-size:14px;
+            color:#333;
+            text-decoration:none;
+            padding:4px;
+            border:1px solid #333;
+            text-align:center;
+
+            -moz-border-radius:5px;
+            -webkit-border-radius:5px;
+            -o-border-radius:5px;
+            border-radius:5px;
+            background:pink;
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            cursor: hand;
+        }
+        .button:hover {
+            background: hotpink;
+        }
+
+        .button:active {
+            color: white;
+        }
     </style>
 </head>
 <p align="center" style="margin-top:30%; margin-bottom: 3%; font-size: 18px; color: #666;">
@@ -13,7 +40,7 @@ Welcome to 3peen.us, providing shrinkage for girthy URLs.
     <form method="POST" action="/shorten/">
         <input name="url" size="100" placeholder="http://..." style="font-size: 12px;"></input>
         {% csrf_token %}        
-        <button type="submit">shorten</button>
+        <button class="button" type="submit">shrink</button>
     </form>
 </div>
 <div align="center" style="color: #999; font-size: 10px; margin-top: 5%;">
