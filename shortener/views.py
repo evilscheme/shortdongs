@@ -17,7 +17,11 @@ def shorten(request):
     try:
         url = request.POST['url']
     except:
-        raise Http404()
+        try:
+            url = request.GET['url']
+        except:
+            raise Http404()
+    
     
     if not re.match('^https?://.*', url):
         raise Http404()

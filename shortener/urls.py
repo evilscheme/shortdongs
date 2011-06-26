@@ -6,7 +6,7 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('shortener.views',
     (r'^$', 'index'),
-    (r'^shorten/$', 'shorten'),
+    (r'^shorten/?$', 'shorten'),
     (r'^dump/$', 'dump'),
     (r'(.*)', 'resolve'),
 )
