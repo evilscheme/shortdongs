@@ -1,7 +1,18 @@
 <html>
+<head>
+    <title>3peen.us</title>
+    <style>
+        body {font-family: Verdana, Arial, Helvetica, sans-serif;}
+    </style>
+</head>
+<p align="center" style="margin-top:30%; margin-bottom: 3%; font-size: 18px; color: #666;">
+Welcome to 3peen.us, providing shrinkage for girthy URLs.
+</p>
+<div align="center">
     <form method="POST" action="/shorten/">
-        <input name="url" size="80" placeholder="http://..."></input>
-        {% csrf_token %}
+        <input name="url" size="100" placeholder="http://..." style="font-size: 12px;"></input>
+        {% csrf_token %}        
         <button type="submit">shorten</button>
     </form>
+</div>
 </html>
